@@ -1,0 +1,64 @@
+﻿@model CreateUserViewModel
+
+<h2>Add New User</h2>
+<hr />
+<br />
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="row">
+
+        <div class="col-md-6">
+            <label asp-for="Email" ></label>
+            <div>
+                <input asp-for="Email" required class="form-control" id="Email" placeholder="Enter the Email">
+            </div>
+        </div>
+
+    </div>
+    <br />
+    <div class="row">
+
+      <div class="col-md-6">
+            <label asp-for="PhoneNumber" ></label>
+            <div >
+                <input asp-for="PhoneNumber" required class="form-control" id="EnName" placeholder="Enter the Phone Number">
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <label asp-for="Password"></label>
+            <div >
+                <input asp-for="Password" required class="form-control" id="EnName" placeholder="Enter the Password">
+            </div>
+
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <label>Image</label>
+            <div >
+                <input type="file" asp-for="Image" required class="form-control" id="Image" placeholder="Enter the Image">
+            </div>
+        </div>
+
+      <div class="col-md-6">
+            <label col-form-label"> Select the User Type</label>      
+            <select asp-for="UsersType" class="form-select" aria-label="select example" >
+                <option selected>Open this select menu</option>
+                <option value="@UserType.Admin">Admin</option>
+                <option value="@UserType.Employee">Employee</option>
+            </select>
+        </div>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary" value="Save">Add new User</button>
+    <a class="btn btn-danger" asp-controller="User" asp-action="Index">Back</a>
+
+
+
+</form>

@@ -1,0 +1,41 @@
+﻿@model UpdateRegionViewModel
+
+<form asp-action="Update" enctype="multipart/form-data">
+    <div class="row">
+
+        <div class="col-md-6">
+            <label class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input asp-for="Name" required class="form-control" id="EnName" placeholder="Enter the City">
+            </div>
+        </div>
+
+    </div>
+    <br />
+    <div class="row">
+
+
+        <div class="col-md-6">
+            <label col-form-label"> Select the Region</label>
+
+            <select asp-for="CityId" required class="form-select form-select-lg mb-3" asp-items="ViewBag.SendRegionsId" aria-label=".form-select-sm example">
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label class="col-sm-2 col-form-label">Image</label>
+            <div class="col-sm-10">
+                <input type="file" asp-for="Image" required class="form-control" id="Image" placeholder="Enter the Image">
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary" value="Save">Add new Region</button>
+    <a class="btn btn-danger" asp-controller="Region" asp-action="Index">Back</a>
+
+
+
+</form>

@@ -1,0 +1,23 @@
+﻿@model UpdateCountryViewModel
+
+<h1>Update aCountry</h1>
+<hr />
+<br />
+<form asp-action="Update">
+
+    <input asp-for="Id"  type="hidden">
+    <div class="col-md-6">
+
+        <label class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <input asp-for="Name" required class="form-control" id="Name" placeholder="Enter the Name Country">
+        </div>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary" value="Save">Update the Country</button>
+    <a class="btn btn-danger" asp-controller="Country" asp-action="Index">Back</a>
+
+
+</form>
